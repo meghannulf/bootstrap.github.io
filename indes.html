@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shutter - Photo Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: black;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            color: red;
+        }
+        .gallery {
+            margin-left: 220px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+        .social-icons {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        .social-icons a {
+            color: white;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SHUTTER</h2>
+        <a href="#" target="_blank"><i class="fas fa-home"></i> HOME</a>
+        <a href="#" target="_blank"><i class="fas fa-image"></i> PHOTOS</a>
+        <a href="#" target="_blank"><i class="fas fa-user"></i> BIO</a>
+        <a href="#" target="_blank"><i class="fas fa-blog"></i> BLOG</a>
+    <a href="contact.html" target="_blank"><i class="fas fa-envelope"></i> CONTACT</a>
+        <div class="social-icons">
+            <a href="facebook.html" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="twitter.html" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="insta.html" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="idaho_images/idaho1.jpeg" data-toggle="modal" data-target="#imageModal" onclick="showImage(this.src)">
+        <img src="idaho_images/image2.jpeg" data-toggle="modal" data-target="#imageModal" onclick="showImage(this.src)">
+        <img src="idaho_images/image3.jpeg" data-toggle="modal" data-target="#imageModal" onclick="showImage(this.src)">
+        <img src="idaho_images/image4.jpeg" data-toggle="modal" data-target="#imageModal" onclick="showImage(this.src)">
+        <img src="idaho_images/image5.jpeg" data-toggle="modal" data-target="#imageModal" onclick="showImage(this.src)">
+        <img src="idaho_images/image6.jpeg" data-toggle="modal" data-target="#imageModal" onclick="showImage(this.src)">
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showImage(src) {
+            document.getElementById("modalImage").src = src;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
